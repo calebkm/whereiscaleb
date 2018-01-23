@@ -1,4 +1,4 @@
-require 'Base64'
+require 'base64'
 require 'flickraw'
 
 string = "OTQ5N2M2Yjk2OTUxODAzZmM4MjRhNmQ2ZWJmNDY2NTg=\nBODE4ZjVmNjIwNzMwYTY1MA==\n"
