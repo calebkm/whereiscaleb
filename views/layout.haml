@@ -1,9 +1,25 @@
+- photo = flickr.photos.search(tags: '#landscape, #nature, #beautiful', sort: 'interestingness-desc', safe_search: 3, page: 1, per_page: 50).to_a.shuffle.first
+- info = flickr.photos.getInfo(photo_id: photo['id'], secret: photo['secret'])
+- photo_url = FlickRaw.url_b(info)
+- user_name = info['owner']['username'] || 'Flickr User'
+- profile_url = flickr.urls.getUserProfile(user_id: info['owner']['nsid'])['url'] rescue nil
+
 !!!
-%html
+%html{style: 'height:100%;'}
   %head
     %title Where is Caleb?
     %meta{name: 'viewport', content: 'initial-scale=1.0, width=device-width'}
     %link{rel: 'stylesheet', media: 'screen', href: '/foundation.css'}
+    %link{href: 'https://fonts.googleapis.com/css?family=Montserrat', rel: 'stylesheet'}
 
-  %body
-    = yield
+  %body{style: "background:url('#{photo_url}') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size:cover;height:100%;font-family: 'Montserrat',sans-serif;"}
+    %table{style: 'width:100%;height:95%;'}
+      %tr
+        %td{style: 'text-align:center;vertical-align:middle;color:white;'}
+          %span{style: 'font-size:10rem;text-shadow:5px 5px 15px #444;'}
+            Brattleboro
+
+    .credits{style: 'text-align:right;padding-right:25px;color:white;font-size:.9rem;text-shadow:1px 1px #444;'}
+      - if user_name && !user_name.empty? && profile_url && !profile_url.empty?
+        %a{href: profile_url, target: '_blank', style: 'color:white;'}
+          &copy; #{user_name}
