@@ -1,0 +1,11 @@
+.background{style: "background-image: url('#{@photo.photo_url}');"}
+  %table.location
+    %tr
+      %td
+        %span
+          = @location
+
+  - if @photo.profile_url
+    .credits
+      %a{href: @photo.profile_url, target: '_blank'}
+        &copy; #{@photo.profile_name}
