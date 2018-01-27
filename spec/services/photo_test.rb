@@ -1,5 +1,5 @@
 require 'test/unit'
-require './config/photo'
+require './services/photo'
 
 class PhotoTest < Test::Unit::TestCase
   def test_photo_url

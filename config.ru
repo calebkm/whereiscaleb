@@ -3,7 +3,7 @@ require 'bundler'
 
 Bundler.require
 
-Dir.glob('./config/*.rb').each { |file| require file }
+Dir.glob('./services/*.rb').each { |file| require file }
 
 require './whereiscaleb'
-run Snipping
+run WhereIsCaleb

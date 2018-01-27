@@ -1,4 +1,4 @@
-class Snipping < Sinatra::Base
+class WhereIsCaleb < Sinatra::Base
   get '/' do
     @location = 'Brattleboro'
     @photo = Photo.new
