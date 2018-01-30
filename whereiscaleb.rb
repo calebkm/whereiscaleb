@@ -1,6 +1,6 @@
 class WhereIsCaleb < Sinatra::Base
   get '/' do
-    @location = 'Brattleboro'
+    @location = 'Seattle'
     @photo = Photo.new
     
     haml :index
