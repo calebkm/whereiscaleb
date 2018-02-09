@@ -4,3 +4,4 @@ gem 'sinatra'
 
 gem 'flickraw'
 gem 'haml'
+gem 'nokogiri'

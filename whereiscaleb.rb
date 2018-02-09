@@ -1,6 +1,6 @@
 class WhereIsCaleb < Sinatra::Base
   get '/' do
-    @location = 'Seattle'
+    @location = ScrapeYelp.new.()
     @photo = Photo.new
     
     haml :index
