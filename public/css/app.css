@@ -48,6 +48,11 @@ table td {
   }
 }
 
+.error {
+  font-size: 2rem;
+  text-shadow: 3px 3px 10px #444;
+}
+
 .credits {
   text-align: right;
   padding-right: 25px;

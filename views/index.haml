@@ -2,8 +2,12 @@
   %table
     %tr
       %td
-        %span.city
-          = @location
+        - if @location
+          %span.city
+            = @location
+        - else
+          %span.error
+            Uh oh, looks like there was a problem parsing my location. Check back again in a bit.
 
   - if @photo.profile_url
     .credits

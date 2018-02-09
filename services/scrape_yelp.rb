@@ -15,7 +15,7 @@ private
   def data
     @_data ||= begin
       Nokogiri::HTML(open(url, 'User-Agent' => "Ruby/#{RUBY_VERSION}"))
-    rescue => error
+    rescue
       nil
     end
   end
