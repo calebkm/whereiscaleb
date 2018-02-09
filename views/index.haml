@@ -1,8 +1,8 @@
 .background{style: "background-image: url('#{@photo.photo_url}');"}
-  %table.location
+  %table
     %tr
       %td
-        %span
+        %span.city
           = @location
 
   - if @photo.profile_url
